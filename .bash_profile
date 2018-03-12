@@ -28,16 +28,27 @@
 
 #   Super Useful Common Shortcuts
 #   -----------------------------
-	alias c='clear'			# Single Character Clean
-	alias ls='ls -1AFG' 		# full ls
-	alias o='open .'		# Open in Finder
-	alias gg='git status'		# shortcut for git status
+	alias c='clear'				
+	alias cc='cd ~; clear'			
+	alias ls='ls -1AFG' 			
+	alias o='open .'			
+	alias gg='git status'			
+	alias trash='sudo rm -rf ~/.Trash; rm -rf ~/Downloads/*'
 
 
 #   ---------------------------------------
 #   3. CUSTOM FUNCTIONS
 #   ---------------------------------------
 
+
+#   write a daily note
+#   -----------------------------
+	alias notes='touch ~/Notes/$(date '+%Y%m%d').txt; vim + ~/Notes/$(date '+%Y%m%d').txt'
+
+
+#   Find specific note using key phrase
+#   -----------------------------
+	ask () { ag -i -A --column "$@" ~/Notes; }
 
 
 #   ---------------------------------------
